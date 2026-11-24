@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kids Jungle Adventure</title>
+<style>
+:root{--bg:#f1f8e9;--card:#fff;--ink:#1b3a1b;--mute:#4d6b4d;--acc:#2e7d32;--tip:#fff3cd;--tipink:#5c4400;--bar:#66bb6a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10200f;--card:#1a2e19;--ink:#e6f2e0;--mute:#a9c4a3;--acc:#81c784;--tip:#3a3210;--tipink:#ffe9a0;--bar:#4caf50;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10200f;--card:#1a2e19;--ink:#e6f2e0;--mute:#a9c4a3;--acc:#81c784;--tip:#3a3210;--tipink:#ffe9a0;--bar:#4caf50;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Comic Sans MS","Trebuchet MS",system-ui,sans-serif;line-height:1.55}
+header{text-align:center;padding:28px 16px 12px}
+h1{margin:0;font-size:clamp(1.8rem,6vw,2.8rem);color:var(--acc)}
+header p{color:var(--mute);margin:6px auto;max-width:560px}
+.links a{display:inline-block;margin:6px;padding:8px 14px;border-radius:20px;background:var(--acc);color:var(--bg);text-decoration:none;font-weight:bold}
+main{max-width:980px;margin:0 auto;padding:8px 16px 40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--card);border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.card .e{font-size:2.6rem}
+.card h2{margin:4px 0 2px;font-size:1.15rem;color:var(--acc)}
+.card .sub{margin:0 0 8px;color:var(--mute);font-size:.9rem}
+.card ul{padding-left:18px;margin:0 0 10px}
+.tip{background:var(--tip);color:var(--tipink);border-radius:10px;padding:8px 10px;font-size:.9rem}
+section.d{background:var(--card);border-radius:16px;padding:16px;margin:16px 0}
+section.d h2{margin-top:0;color:var(--acc)}
+.row{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:.9rem}
+.row span.n{width:110px;flex:none}
+.row .b{height:16px;border-radius:8px;background:var(--bar)}
+.scroll{overflow-x:auto}
+.ban{display:block;margin:0 auto 10px;max-width:260px;width:60%;border-radius:16px}
+.vids{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.vids video{width:100%;border-radius:10px;background:#000;aspect-ratio:16/9}
+footer{text-align:center;color:var(--mute);padding:16px;font-size:.85rem}
+</style>
+</head>
+<body>
+<header>
+<img class="ban" src="thumbs/1.png" alt="Kids Jungle Adventure" onerror="this.style.display='none'">
+<h1>🌴 Kids Jungle Adventure 🌴</h1>
+<p>Come along, little explorers! Let’s meet 12 amazing jungle friends, one by one.</p>
+<div class="links">
+<a href="../kidsworld/index.html">🏠 Back to Kids World</a>
+</div>
+</header>
+<main>
+<section class="d">
+<h2>🔗 How the jungle shares food (food chain)</h2>
+<div class="scroll">
+<svg viewBox="0 0 640 110" width="100%" style="min-width:520px" role="img" aria-label="Food chain: grass to zebra to lion">
+<g font-size="15" text-anchor="middle" fill="currentColor">
+<rect x="10" y="25" width="150" height="55" rx="14" fill="#a5d6a7" stroke="#2e7d32"/><text x="85" y="58" fill="#1b3a1b">🌿 Grass &amp; leaves</text>
+<rect x="245" y="25" width="150" height="55" rx="14" fill="#fff59d" stroke="#f9a825"/><text x="320" y="58" fill="#3e2f00">🦓 Zebra</text>
+<rect x="480" y="25" width="150" height="55" rx="14" fill="#ffcc80" stroke="#ef6c00"/><text x="555" y="58" fill="#3e1f00">🦁 Lion</text>
+<path d="M165 52H240M400 52H475" stroke="#2e7d32" stroke-width="3" marker-end="url(#a)"/>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#2e7d32"/></marker></defs>
+<text x="202" y="45" font-size="11">eaten by</text><text x="438" y="45" font-size="11">eaten by</text>
+</g></svg>
+</div>
+<p><b>Example:</b> Just like at lunch time, your tiffin gives you energy to play. Grass gives the zebra energy, and the zebra gives the lion energy.</p>
+</section>
+
+<div class="grid" id="grid"></div>
+
+<section class="d">
+<h2>📏 How tall are they? (approximate adult height, metres)</h2>
+<div id="chart"></div>
+<p><b>Example:</b> A giraffe can be taller than a double-decker bus is wide. Stand next to a door (about 2 m) and imagine a giraffe looking down at you!</p>
+</section>
+</main>
+<footer>Facts are kept simple and based on commonly published wildlife sources. Please enjoy animals safely, from a distance. 💚</footer>
+
+<script>
+var A=[
+["🦁","Meeting the King of the Jungle","The Lion","Lions live in family groups called prides. Only male lions grow a mane. A lion’s roar can be heard from several kilometres away. (Gentle note: lions really live in grasslands called savannas, but they are the famous “king” of all wild animals.)","Roar like a lion in a safe, quiet game, then whisper like a cub. Notice how your voice carries."],
+["🐘","The Gentle Giant","Elephant","The elephant is the largest animal living on land. Its trunk is nose, hand and drinking straw all in one. Elephants live in herds led by an older female.","Try picking up a small toy using only your elbow and wrist, like a trunk. It is harder than it looks!"],
+["🐯","The Striped Beauty","Tiger","The tiger is the biggest of all cats. No two tigers have the same stripe pattern, just like your fingerprints are yours alone. Tigers like water and swim well. In India, it is our national animal.","Press your thumb on an ink pad and compare prints with a friend. Different, just like tiger stripes."],
+["🐒","The Funny Jumpers","Monkeys","Monkeys live in groups called troops. They eat fruit, leaves and insects. Monkeys have tails, and some South American monkeys can hold branches with theirs.","Play “Monkey See, Monkey Do”: one child makes a move, the others copy it."],
+["🦒","The Tallest Jungle Animal","Giraffe","Giraffes are the tallest land animals. Their neck has 7 bones, the same number as yours, only much longer! Their tongue is dark and long enough to grab leaves from thorny trees.","Stretch up on tiptoes and reach for a high shelf. That is a giraffe’s daily lunch routine."],
+["🦛","The Giant of the River","Hippopotamus","Hippos spend most of the day in water to keep cool, and come out at night to eat grass. They can hold their breath for several minutes. Hippos can be dangerous, so we admire them from afar.","On a hot day, notice how cool a splash of water feels. A hippo does this all day."],
+["🦚","The Colourful Dancer","Peacock","The male peacock has long, beautiful tail feathers that he spreads like a fan to impress the peahen. The peacock is India’s national bird.","Draw a peacock using your hand: trace your fingers for feathers and colour each one differently."],
+["🐢","The Slow Traveller","Tortoise","A tortoise lives on land and carries its shell, which is part of its body, everywhere. Some tortoises live for over 100 years. Slow and steady, they keep going.","Race slowly across the room. The slowest walker wins. It teaches patience!"],
+["🦊","The Clever Hunter","Fox","Foxes have large ears and sharp hearing, and a bushy tail. They eat small animals, fruits and insects. They are well known for being smart and careful.","Play “Listen like a fox”: close your eyes and name every sound you hear in one minute."],
+["🦓","The Striped Horse","Zebra","Zebras are related to horses and live in herds. Each zebra’s stripes are unique. Scientists believe the stripes help keep biting flies away.","Draw black and white stripes on paper, and see how no two drawings look alike."],
+["🦍","The Playful Chimpanzee","Chimpanzee","Chimpanzees are apes, not monkeys, and have no tail. They are very clever and use sticks as tools to collect termites to eat.","Use a spoon to pick up a cotton ball, a tool just like the chimp’s stick."]
+];
+var S=["lion","elephant","tiger","monkey","giraffe","hippo","peacock","tortoise","fox","zebra","chimpanzee","snake"];
+function v(n){var o="";for(var k=1;k<=2;k++){o+='<video controls preload="none" playsinline poster="thumbs/1.png" src="videos/'+n+'-'+k+'.mp4"></video>';}return o;}
+var g=document.getElementById("grid");
+A.forEach(function(a,i){
+var d=document.createElement("div");d.className="card";
+d.innerHTML='<div class="e">'+a[0]+'</div><h2>'+(i+1)+'. '+a[1]+'</h2><p class="sub">'+a[2]+'</p><ul><li>'+a[3].split(/(?<=\.)\s(?=[A-Z(])/).join('</li><li>')+'</li></ul><div class="tip">💡 Try this: '+a[4]+'</div><div class="vids">'+v(S[i])+'</div>';
+g.appendChild(d);});
+var H=[["Giraffe 🦒",5.5],["Elephant 🐘",3.3],["Hippo 🦛",1.5],["Zebra 🦓",1.4],["Chimp 🦍",1.3],["Lion 🦁",1.2],["Tiger 🐯",1.0],["Fox 🦊",0.4]];
+var c=document.getElementById("chart");
+H.forEach(function(h){var r=document.createElement("div");r.className="row";
+r.innerHTML='<span class="n">'+h[0]+'</span><div class="b" style="width:'+(h[1]/5.5*60)+'%"></div><span>'+h[1]+' m</span>';c.appendChild(r);});
+</script>
+</body>
+</html>
